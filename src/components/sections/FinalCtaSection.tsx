@@ -125,7 +125,7 @@ const FAQSection = () => {
                 className="group w-full md:w-auto px-6 py-6 md:px-8 md:py-7 text-base md:text-lg font-semibold"
               >
                 <span className="flex items-center justify-center gap-2">
-                  Aplicar para consultoria gratuita
+                   consultoria gratuita
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
                 </span>
               </Button>
