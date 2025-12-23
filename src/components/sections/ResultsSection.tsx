@@ -84,9 +84,14 @@ const ResultsSection = () => {
           </h3>
           
           <a href={applicationUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="xl" className="group">
-              Aplique agora para uma vaga!
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            <Button 
+              variant="hero" 
+              className="group w-full md:w-auto px-4 py-6 md:py-7 text-base md:text-lg font-semibold"
+            >
+              <span className="flex items-center justify-center gap-2">
+                Aplique agora para uma vaga!
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </Button>
           </a>
         </div>
