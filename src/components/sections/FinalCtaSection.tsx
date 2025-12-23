@@ -48,13 +48,20 @@ const FinalCtaSection = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <a href={applicationUrl} target="_blank" rel="noopener noreferrer">
-          <Button variant="hero" size="xl" className="group">
-            Aplique agora para sua vaga
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </a>
+        {/* CTA - BOTÃO RESPONSIVO */}
+        <div className="px-4">
+          <a href={applicationUrl} target="_blank" rel="noopener noreferrer">
+            <Button 
+              variant="hero" 
+              className="group w-full md:w-auto px-6 py-6 md:px-8 md:py-7 text-base md:text-lg font-semibold"
+            >
+              <span className="flex items-center justify-center gap-2">
+                Aplique agora para sua vaga
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Button>
+          </a>
+        </div>
 
         <p className="mt-6 text-sm text-muted-foreground">
           ⚠️ Vagas limitadas — Não perca essa oportunidade
