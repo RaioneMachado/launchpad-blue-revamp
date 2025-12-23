@@ -12,21 +12,21 @@ const HeroSection = () => {
         <img
           src={resultsBg}
           alt=""
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-top scale-110" {/* Aumentado o zoom da imagem */}
         />
-        <div className="absolute inset-0 bg-background/95" /> {/* Aumentada opacidade para 95% */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+        <div className="absolute inset-0 bg-background/98" /> {/* Aumentada opacidade para 98% */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" /> {/* Gradiente mais forte */}
       </div>
       
       {/* Background glow effects */}
       <div className="hero-glow top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2" />
-      <div className="hero-glow bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 opacity-50" />
+      <div className="hero-glow bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 opacity-30" /> {/* Reduzida opacidade dos glows */}
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Badge */}
         <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 backdrop-blur-sm bg-background/60">
             <Calendar className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground">Consultoria 100% Gratuita</span>
           </div>
