@@ -14,19 +14,19 @@ const HeroSection = () => {
           alt=""
           className="w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-background/95" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" />
+        <div className="absolute inset-0 bg-background/85" /> {/* Reduzi para 85% para mostrar mais a imagem */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/20" />
       </div>
       
-      {/* Background glow effects - versão simplificada */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      {/* Background glow effects */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Badge */}
         <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/90 backdrop-blur-sm border border-primary/30 mb-8 shadow-lg">
             <Calendar className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground">Consultoria 100% Gratuita</span>
           </div>
