@@ -1,11 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
+import resultsBg from "@/assets/results-bg.webp";
 
 const HeroSection = () => {
   const applicationUrl = "https://wotp63ycokg.typeform.com/to/gqPnS5YJ";
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+      {/* Background image with overlay - mesma imagem da ResultsSection */}
+      <div className="absolute inset-0">
+        <img
+          src={resultsBg}
+          alt=""
+          className="w-full h-full object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-background/95" /> {/* Aumentada opacidade para 95% */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      </div>
+      
       {/* Background glow effects */}
       <div className="hero-glow top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2" />
       <div className="hero-glow bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 opacity-50" />
