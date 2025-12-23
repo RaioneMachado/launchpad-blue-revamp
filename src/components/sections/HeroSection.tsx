@@ -24,12 +24,17 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Logo acima do badge */}
+        {/* Logo acima do badge - TESTE COM DIFERENTES CAMINHOS */}
         <div className="animate-fade-up mb-6 md:mb-8" style={{ animationDelay: '0.05s' }}>
           <img 
             src="/logo.png" 
             alt="Código do Euro" 
             className="mx-auto h-12 md:h-16 w-auto object-contain"
+            onError={(e) => {
+              console.log("Tentando caminho alternativo...");
+              // Tentar caminhos alternativos
+              e.currentTarget.src = "./logo.png";
+            }}
           />
         </div>
 
