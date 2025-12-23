@@ -11,37 +11,38 @@ const AboutSection = () => {
   const applicationUrl = "https://wotp63ycokg.typeform.com/to/gqPnS5YJ";
 
   return (
-    <section className="relative py-24 px-4">
+    <section className="relative py-16 md:py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image side */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+            <div className="relative aspect-[4/5] rounded-xl md:rounded-2xl overflow-hidden">
               <img
                 src="https://xn--cabeadrop-t3a.com/banner3.png"
                 alt="Cabeça - Mentor do Código do Euro"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             </div>
             
             {/* Floating stats card */}
-            <div className="absolute -bottom-6 -right-6 md:bottom-8 md:-right-8 glass-card rounded-2xl p-6 animate-float">
-              <p className="font-display text-3xl font-bold gradient-text">R$9,5M+</p>
-              <p className="text-sm text-muted-foreground">Faturamento Validado</p>
+            <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 lg:bottom-8 lg:-right-8 glass-card rounded-xl md:rounded-2xl p-4 md:p-6 animate-float">
+              <p className="font-display text-xl md:text-2xl lg:text-3xl font-bold gradient-text">R$9,5M+</p>
+              <p className="text-xs md:text-sm text-muted-foreground">Faturamento Validado</p>
             </div>
           </div>
 
           {/* Content side */}
           <div className="order-1 lg:order-2">
-            <h2 className="font-display text-2xl md:text-4xl font-bold mb-6">
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
               Quem sou eu pra te{" "}
               <span className="gradient-text">prometer isso?</span>
             </h2>
 
-            <div className="space-y-6 text-muted-foreground">
-              <p className="text-lg">
+            <div className="space-y-4 md:space-y-6 text-muted-foreground text-sm md:text-base">
+              <p>
                 Sou o <span className="text-foreground font-semibold">Cabeça</span>, o tipo de pessoa que sempre construiu no silêncio.
               </p>
               
@@ -67,22 +68,32 @@ const AboutSection = () => {
             </div>
 
             {/* Highlights */}
-            <div className="flex flex-wrap gap-3 mt-8 mb-8">
+            <div className="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-8 mb-6 md:mb-8">
               {highlights.map((item, index) => (
-                <div key={index} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card">
-                  <item.icon className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-medium text-foreground">{item.text}</span>
+                <div 
+                  key={index} 
+                  className="inline-flex items-center gap-1 md:gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass-card text-xs md:text-sm"
+                >
+                  <item.icon className="w-3 h-3 md:w-4 md:h-4 text-primary" />
+                  <span className="font-medium text-foreground">{item.text}</span>
                 </div>
               ))}
             </div>
 
-            {/* CTA */}
-            <a href={applicationUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="hero" size="lg" className="group">
-                Quero minha consultoria gratuita
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </a>
+            {/* CTA - Botão responsivo */}
+            <div className="text-center md:text-left">
+              <a href={applicationUrl} target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="hero" 
+                  className="group w-full md:w-auto px-6 py-6 md:px-8 md:py-7 text-base md:text-lg font-semibold"
+                >
+                  <span className="flex items-center justify-center gap-2">
+                    Quero minha consultoria gratuita
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
