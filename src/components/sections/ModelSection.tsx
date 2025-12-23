@@ -12,19 +12,19 @@ const ModelSection = () => {
   const applicationUrl = "https://wotp63ycokg.typeform.com/to/gqPnS5YJ";
 
   return (
-    <section className="relative py-16 md:py-24 px-4 overflow-hidden"> {/* Reduzido de py-24 para py-16 md:py-24 */}
+    <section className="relative py-16 md:py-24 px-4 overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       
       <div className="relative max-w-5xl mx-auto">
-        {/* Alert badge - com menor margin-bottom no mobile */}
+        {/* Alert badge */}
         <div className="text-center mb-6 md:mb-8">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium">
             ⚠️ VAGAS LIMITADAS
           </span>
         </div>
 
-        {/* Main content - reduzido margin-bottom no mobile */}
+        {/* Main content */}
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="text-muted-foreground">Mandando a real:</span>{" "}
@@ -37,7 +37,7 @@ const ModelSection = () => {
           </p>
         </div>
 
-        {/* Benefits grid - ajustado gap e margin-bottom */}
+        {/* Benefits grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-12">
           {benefits.map((benefit, index) => (
             <div
@@ -50,7 +50,7 @@ const ModelSection = () => {
           ))}
         </div>
 
-        {/* Key message - ajustado padding */}
+        {/* Key message */}
         <div className="glass-card rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-center mb-6 md:mb-8">
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-3 md:mb-4">
             Você não precisa reinventar nada.
@@ -63,12 +63,17 @@ const ModelSection = () => {
           </p>
         </div>
 
-        {/* CTA */}
+        {/* CTA - BOTÃO CORRIGIDO */}
         <div className="text-center">
           <a href={applicationUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="hero" size="lg md:xl" className="group">
-              Aplique agora para uma vaga
-              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+            <Button 
+              variant="hero" 
+              className="group w-full md:w-auto px-6 py-6 md:px-8 md:py-7 text-base md:text-lg font-semibold"
+            >
+              <span className="flex items-center justify-center gap-2">
+                Aplique agora para uma vaga
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+              </span>
             </Button>
           </a>
         </div>
