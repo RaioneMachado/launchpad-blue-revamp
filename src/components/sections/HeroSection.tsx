@@ -6,7 +6,7 @@ const HeroSection = () => {
   const applicationUrl = "https://wotp63ycokg.typeform.com/to/gqPnS5YJ";
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-20"> {/* Reduzido py-20 para py-16 md:py-20 */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-20">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
@@ -24,6 +24,15 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
+        {/* Logo acima do badge */}
+        <div className="animate-fade-up mb-6 md:mb-8" style={{ animationDelay: '0.05s' }}>
+          <img 
+            src="/logo.png" 
+            alt="Código do Euro" 
+            className="mx-auto h-12 md:h-16 w-auto object-contain"
+          />
+        </div>
+
         {/* Badge com menor margin-bottom no mobile */}
         <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/90 backdrop-blur-sm border border-primary/30 mb-6 md:mb-8 shadow-lg">
@@ -32,7 +41,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Logo/Brand com menor margin-bottom no mobile */}
+        {/* Logo/Brand com menor margin-bottom no mobile - Removido pois já temos a logo acima */}
         <div className="animate-fade-up mb-4 md:mb-6" style={{ animationDelay: '0.2s' }}>
           <h2 className="font-display text-xl md:text-2xl tracking-widest text-primary uppercase">
             Código do Euro
