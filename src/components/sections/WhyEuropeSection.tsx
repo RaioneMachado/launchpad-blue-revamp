@@ -25,10 +25,10 @@ const reasons = [
 
 const WhyEuropeSection = () => {
   return (
-    <section className="relative py-24 px-4">
+    <section className="relative py-16 md:py-24 px-4"> {/* Reduzido de py-24 para py-16 md:py-24 */}
       <div className="max-w-6xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
+        {/* Section header - com menor margin-bottom no mobile */}
+        <div className="text-center mb-8 md:mb-16">
           <h2 className="font-display text-2xl md:text-4xl font-bold mb-4">
             Por que vender{" "}
             <span className="gradient-text">para fora do Brasil?</span>
@@ -38,22 +38,22 @@ const WhyEuropeSection = () => {
           </p>
         </div>
 
-        {/* Reasons grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Reasons grid - com menor gap no mobile */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="glass-card rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 group"
+              className="glass-card rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 group"
             >
-              <div className="flex items-start gap-5">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary group-hover:from-primary group-hover:to-primary/80 group-hover:text-primary-foreground transition-all duration-300">
-                  <reason.icon className="w-8 h-8" />
+              <div className="flex items-start gap-4 md:gap-5">
+                <div className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary group-hover:from-primary group-hover:to-primary/80 group-hover:text-primary-foreground transition-all duration-300">
+                  <reason.icon className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold mb-3 text-foreground">
+                  <h3 className="font-display text-lg md:text-xl font-semibold mb-2 md:mb-3 text-foreground">
                     {reason.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                     {reason.description}
                   </p>
                 </div>
@@ -62,23 +62,23 @@ const WhyEuropeSection = () => {
           ))}
         </div>
 
-        {/* Stats highlight */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="glass-card rounded-xl p-6 text-center">
-            <p className="font-display text-3xl md:text-4xl font-bold gradient-text">€6,46</p>
-            <p className="text-sm text-muted-foreground mt-2">Cotação do Euro</p>
+        {/* Stats highlight - com menor margin-top no mobile */}
+        <div className="mt-8 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="glass-card rounded-xl p-4 md:p-6 text-center">
+            <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold gradient-text">€6,46</p>
+            <p className="text-xs md:text-sm text-muted-foreground mt-2">Cotação do Euro</p>
           </div>
-          <div className="glass-card rounded-xl p-6 text-center">
-            <p className="font-display text-3xl md:text-4xl font-bold gradient-text">30%+</p>
-            <p className="text-sm text-muted-foreground mt-2">Margem de Lucro</p>
+          <div className="glass-card rounded-xl p-4 md:p-6 text-center">
+            <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold gradient-text">30%+</p>
+            <p className="text-xs md:text-sm text-muted-foreground mt-2">Margem de Lucro</p>
           </div>
-          <div className="glass-card rounded-xl p-6 text-center">
-            <p className="font-display text-3xl md:text-4xl font-bold gradient-text">€5k+</p>
-            <p className="text-sm text-muted-foreground mt-2">Lucro Mensal</p>
+          <div className="glass-card rounded-xl p-4 md:p-6 text-center">
+            <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold gradient-text">€5k+</p>
+            <p className="text-xs md:text-sm text-muted-foreground mt-2">Lucro Mensal</p>
           </div>
-          <div className="glass-card rounded-xl p-6 text-center">
-            <p className="font-display text-3xl md:text-4xl font-bold gradient-text">R$9.5M</p>
-            <p className="text-sm text-muted-foreground mt-2">Faturamento Validado</p>
+          <div className="glass-card rounded-xl p-4 md:p-6 text-center">
+            <p className="font-display text-2xl md:text-3xl lg:text-4xl font-bold gradient-text">R$9.5M</p>
+            <p className="text-xs md:text-sm text-muted-foreground mt-2">Faturamento Validado</p>
           </div>
         </div>
       </div>
