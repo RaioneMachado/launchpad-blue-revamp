@@ -7,26 +7,26 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
-      {/* Background image with overlay - mesma imagem da ResultsSection */}
+      {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
           src={resultsBg}
           alt=""
-          className="w-full h-full object-cover object-top scale-110" {/* Aumentado o zoom da imagem */}
+          className="w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-background/98" /> {/* Aumentada opacidade para 98% */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" /> {/* Gradiente mais forte */}
+        <div className="absolute inset-0 bg-background/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/30 to-background" />
       </div>
       
-      {/* Background glow effects */}
-      <div className="hero-glow top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2" />
-      <div className="hero-glow bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 opacity-30" /> {/* Reduzida opacidade dos glows */}
+      {/* Background glow effects - versão simplificada */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Badge */}
         <div className="animate-fade-up" style={{ animationDelay: '0.1s' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 backdrop-blur-sm bg-background/60">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-sm border border-primary/20 mb-8">
             <Calendar className="w-4 h-4 text-primary" />
             <span className="text-sm text-muted-foreground">Consultoria 100% Gratuita</span>
           </div>
