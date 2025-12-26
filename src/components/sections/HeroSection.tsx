@@ -5,13 +5,24 @@ import resultsBg from "@/assets/results-bg.webp";
 const HeroSection = () => {
   const applicationUrl = "https://wotp63ycokg.typeform.com/to/gqPnS5YJ";
 
+  // Testar diferentes caminhos para a logo
+  const logoPaths = [
+    "/logo.webp",
+    "./logo.webp",
+    "logo.webp",
+    "/logo.png",
+    "./logo.png",
+    "logo.png",
+    "/public/logo.webp"
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-16 md:py-20">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img
           src={resultsBg}
-          alt=""
+          alt="Background"
           className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-background/85" />
@@ -24,16 +35,31 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        {/* Logo acima do badge - TESTE COM DIFERENTES CAMINHOS */}
+        {/* Logo acima do badge - Versão simplificada */}
         <div className="animate-fade-up mb-6 md:mb-8" style={{ animationDelay: '0.05s' }}>
           <img 
-            src="/logo.webp.png" 
+            src="/logo.webp" 
             alt="Código do Euro" 
             className="mx-auto h-12 md:h-16 w-auto object-contain"
             onError={(e) => {
-              console.log("Tentando caminho alternativo...");
-              // Tentar caminhos alternativos
-              e.currentTarget.src = "./logo.png";
+              console.error("Erro ao carregar logo.webp, tentando fallback...");
+              const target = e.currentTarget;
+              
+              // Tentar caminhos alternativos sequencialmente
+              if (target.src.includes("logo.webp")) {
+                target.src = "/logo.png";
+              } else if (target.src.includes("logo.png")) {
+                target.src = "/logo.jpg";
+              } else if (target.src.includes("logo.jpg")) {
+                target.src = "/logo.svg";
+              } else {
+                // Se todas falharem, mostrar texto alternativo
+                target.style.display = 'none';
+                const logoText = document.createElement('div');
+                logoText.className = 'font-display text-2xl md:text-3xl font-bold text-primary';
+                logoText.textContent = 'CÓDIGO DO EURO';
+                target.parentNode?.appendChild(logoText);
+              }
             }}
           />
         </div>
@@ -46,7 +72,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Logo/Brand com menor margin-bottom no mobile - Removido pois já temos a logo acima */}
+        {/* Logo/Brand com menor margin-bottom no mobile - Mantido como fallback */}
         <div className="animate-fade-up mb-4 md:mb-6" style={{ animationDelay: '0.2s' }}>
           <h2 className="font-display text-xl md:text-2xl tracking-widest text-primary uppercase">
             Código do Euro
