@@ -27,7 +27,7 @@ const HeroSection = () => {
         {/* Logo acima do badge - TESTE COM DIFERENTES CAMINHOS */}
         <div className="animate-fade-up mb-6 md:mb-8" style={{ animationDelay: '0.05s' }}>
           <img 
-            src="/logo.png" 
+            src="/logo.webp.png" 
             alt="Código do Euro" 
             className="mx-auto h-12 md:h-16 w-auto object-contain"
             onError={(e) => {
