@@ -46,7 +46,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 px-4 overflow-hidden">
+    <section className="relative py-12 md:py-20 px-4 overflow-hidden">
       {/* Background effects - mesmo estilo das outras seções */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       <div className="hero-glow top-1/4 right-1/4 translate-x-1/2 -translate-y-1/2 opacity-30" />
@@ -54,7 +54,7 @@ const FAQSection = () => {
       
       <div className="relative max-w-4xl mx-auto">
         {/* Section header - mesmo estilo das outras seções */}
-        <div className="text-center mb-8 md:mb-12">
+        <div className="text-center mb-6 md:mb-10">
           <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
             Perguntas{" "}
             <span className="gradient-text">Frequentes</span>
@@ -65,7 +65,7 @@ const FAQSection = () => {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-4 mb-10 md:mb-12">
+        <div className="space-y-4 mb-8 md:mb-10">
           {faqItems.map((item, index) => (
             <div
               key={index}
@@ -125,7 +125,7 @@ const FAQSection = () => {
                 className="group w-full md:w-auto px-6 py-6 md:px-8 md:py-7 text-base md:text-lg font-semibold"
               >
                 <span className="flex items-center justify-center gap-2">
-                   consultoria gratuita
+                  consultoria gratuita
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
                 </span>
               </Button>
