@@ -1,17 +1,19 @@
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import App from "./App";
 import "./index.css";
 
-// META PIXEL (FORMA SEGURA PARA VITE)
+// META PIXEL – VERSÃO 100% COMPATÍVEL COM TYPESCRIPT
 (function () {
   const w = window as any;
 
   if (w.fbq) return;
 
-  w.fbq = function () {
-    w.fbq.callMethod
-      ? w.fbq.callMethod.apply(w.fbq, arguments)
-      : w.fbq.queue.push(arguments);
+  w.fbq = function (...args: any[]) {
+    if (w.fbq.callMethod) {
+      w.fbq.callMethod(...args);
+    } else {
+      w.fbq.queue.push(args);
+    }
   };
 
   w.fbq.queue = [];
@@ -27,5 +29,5 @@ import "./index.css";
   w.fbq("track", "PageView");
 })();
 
-// RENDER APP
+// RENDER
 createRoot(document.getElementById("root")!).render(<App />);
