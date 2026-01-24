@@ -9,6 +9,12 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+declare global {
+  interface Window {
+    fbq: (...args: any[]) => void;
+  }
+}
+
 const App = () => {
   useEffect(() => {
     // Meta Pixel Code
@@ -27,8 +33,8 @@ const App = () => {
       s.parentNode.insertBefore(t,s);
     })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
-    fbq('init', '238045384187854');
-    fbq('track', 'PageView');
+    window.fbq('init', '238045384187854');
+    window.fbq('track', 'PageView');
   }, []);
 
   return (
@@ -39,7 +45,6 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
