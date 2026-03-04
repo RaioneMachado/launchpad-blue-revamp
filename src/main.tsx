@@ -1,56 +1,51 @@
-import { createRoot } from "react-dom/client";
-import App from "./App";
-import "./index.css";
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Código do Euro</title>
 
-/* =========================
-   GOOGLE ADS + GA4
-========================= */
-(function () {
-  const script = document.createElement("script");
-  script.async = true;
-  script.src =
-    "https://www.googletagmanager.com/gtag/js?id=AW-17991120347";
-  document.head.appendChild(script);
+    <!-- Google tag (Ads + GA4 juntos) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17991120347"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  (window as any).dataLayer = (window as any).dataLayer || [];
+      gtag('config', 'AW-17991120347');
+      gtag('config', 'G-HC14BJBN1S');
+    </script>
 
-  function gtag(...args: any[]) {
-    (window as any).dataLayer.push(args);
-  }
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;
+        n=f.fbq=function(){
+          n.callMethod ?
+          n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+        };
+        if(!f._fbq)f._fbq=n;
+        n.push=n;
+        n.loaded=!0;
+        n.version='2.0';
+        n.queue=[];
+        t=b.createElement(e);
+        t.async=!0;
+        t.src=v;
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)
+      }(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
 
-  (window as any).gtag = gtag;
+      fbq('init', '238045384187854');
+      fbq('track', 'PageView');
+    </script>
 
-  gtag("js", new Date());
-  gtag("config", "AW-17991120347");
-  gtag("config", "G-HC14BJBN1S");
-})();
+  </head>
 
-/* =========================
-   META PIXEL
-========================= */
-(function () {
-  const w = window as any;
+  <body>
+    <div id="root"></div>
 
-  if (w.fbq) return;
-
-  w.fbq = function (...args: any[]) {
-    w.fbq.queue.push(args);
-  };
-
-  w.fbq.queue = [];
-  w.fbq.loaded = true;
-  w.fbq.version = "2.0";
-
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = "https://connect.facebook.net/en_US/fbevents.js";
-  document.head.appendChild(script);
-
-  w.fbq("init", "238045384187854");
-  w.fbq("track", "PageView");
-})();
-
-/* =========================
-   RENDER
-========================= */
-createRoot(document.getElementById("root") as HTMLElement).render(<App />);
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
