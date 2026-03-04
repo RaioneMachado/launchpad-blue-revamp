@@ -3,27 +3,7 @@ import App from "./App";
 import "./index.css";
 
 /* =========================
-   GOOGLE TAG MANAGER
-========================= */
-(function () {
-  const w = window as any;
-  const d = document;
-  const s = "script";
-  const l = "dataLayer";
-  const i = "GTM-N62GPLGJ";
-
-  w[l] = w[l] || [];
-  w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-
-  const f = d.getElementsByTagName(s)[0];
-  const j = d.createElement(s);
-  j.async = true;
-  j.src = "https://www.googletagmanager.com/gtm.js?id=" + i;
-  f.parentNode?.insertBefore(j, f);
-})();
-
-/* =========================
-   GOOGLE ADS + ANALYTICS
+   GOOGLE ADS + GA4
 ========================= */
 (function () {
   const script = document.createElement("script");
@@ -54,11 +34,7 @@ import "./index.css";
   if (w.fbq) return;
 
   w.fbq = function (...args: any[]) {
-    if (w.fbq.callMethod) {
-      w.fbq.callMethod(...args);
-    } else {
-      w.fbq.queue.push(args);
-    }
+    w.fbq.queue.push(args);
   };
 
   w.fbq.queue = [];
